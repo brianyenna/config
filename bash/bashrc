@@ -10,3 +10,24 @@ parse_git_branch() {
 }
 
 export PS1="\[\033[36m\]\u\[\033[m\]: \[\e[34m\]\w\[\e[0m\] \[\e[33m\]\$(parse_git_branch)\[\e[0m\] >> "
+
+# For convenience when copying to NUS Linux Computing Cluster
+nusscplinux() {
+  scp "$@" brianyen@xcnd10.comp.nus.edu.sg:/home/b/brianyen
+}
+
+nusscpsunfire() {
+  scp "$@" brianyen@sunfire.comp.nus.edu.sg:/home/b/brianyen
+}
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Fuzzy Finder (fzf) settings
+alias fzfp="fzf --preview 'bat {-1} --color=always'"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Fuzzy Git Diff (allows git diff to be displayed in fzf preview window with
+# syntax highlighting
+fgd() {
+  git diff $@ --name-only | fzf -m --ansi --preview "git diff --cached $@ --color=always -- {-1}"
+}

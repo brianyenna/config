@@ -35,6 +35,9 @@ Plugin 'tpope/vim-fugitive'
 " For inserting matching delimiters
 Plugin 'Raimondi/delimitMate'
 
+" For syntax highlighting
+Plugin 'gabrielelana/vim-markdown'
+
 call vundle#end()
 filetype plugin indent on
 

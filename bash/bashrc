@@ -31,3 +31,10 @@ alias fzfp="fzf --preview 'bat {-1} --color=always'"
 fgd() {
   git diff $@ --name-only | fzf -m --ansi --preview "git diff --cached $@ --color=always -- {-1}"
 }
+
+# Set Path for Go
+export GOPATH=$HOME
+
+# Set default editor to Vim
+export EDITOR=vim
+export VISUAL="$EDITOR"

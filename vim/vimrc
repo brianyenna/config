@@ -32,6 +32,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
+" For inserting matching delimiters
+Plugin 'Raimondi/delimitMate'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -100,3 +103,12 @@ syntax on
 
 " Enable Mouse Functionality
 set mouse=a
+
+" Display different types of white spaces.
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
+
+" Add a ruler at 80 and 120th column
+set colorcolumn=80,120
+highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
+

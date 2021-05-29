@@ -38,11 +38,15 @@ Plugin 'Raimondi/delimitMate'
 " For syntax highlighting
 Plugin 'gabrielelana/vim-markdown'
 
+" For taking down notes
+Plugin 'vimwiki/vimwiki'
+
 call vundle#end()
 filetype plugin indent on
 
 " ----- altercation/vim-colors-solarized settings -----
 set background=dark
+set t_Co=256
 colorscheme molokai
 
 " ----- bling/vim-airline settings -----
@@ -100,6 +104,9 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Turn on Syntax Highlighting
 syntax on
@@ -114,4 +121,8 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
 " Add a ruler at 80 and 120th column
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
+
+" WIP: Getting autocomplete functionality
+set omnifunc=syntaxcomplete#Complete
+
 

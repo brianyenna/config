@@ -12,6 +12,8 @@ g:easytags_events	/Users/brianyen/Desktop/config/vim/vimrc	/^let g:easytags_even
 g:easytags_resolve_links	/Users/brianyen/Desktop/config/vim/vimrc	/^let g:easytags_resolve_links = 1$/;"	v	language:Vim
 g:easytags_suppress_ctags_warning	/Users/brianyen/Desktop/config/vim/vimrc	/^let g:easytags_suppress_ctags_warning = 1$/;"	v	language:Vim
 g:nerdtree_tabs_open_on_console_startup	/Users/brianyen/Desktop/config/vim/vimrc	/^let g:nerdtree_tabs_open_on_console_startup = 1$/;"	v	language:Vim
+g:solarized_termcolors	/Users/brianyen/Desktop/config/vim/vimrc.old	/^let g:solarized_termcolors=256$/;"	v	language:Vim
+g:solarized_termtrans	/Users/brianyen/Desktop/config/vim/vimrc.old	/^let g:solarized_termtrans=1$/;"	v	language:Vim
 g:syntastic_error_symbol	/Users/brianyen/Desktop/config/vim/vimrc	/^let g:syntastic_error_symbol = '✘'$/;"	v	language:Vim
 g:syntastic_warning_symbol	/Users/brianyen/Desktop/config/vim/vimrc	/^let g:syntastic_warning_symbol = "▲"$/;"	v	language:Vim
 mySyntastic	/Users/brianyen/Desktop/config/vim/vimrc	/^augroup mySyntastic$/;"	a	language:Vim

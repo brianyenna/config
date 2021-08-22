@@ -125,4 +125,7 @@ highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
 " WIP: Getting autocomplete functionality
 set omnifunc=syntaxcomplete#Complete
 
-
+" Highlight current cursor position
+:hi CursorLine   cterm=NONE ctermbg=grey ctermfg=white guibg=grey guifg=white
+:hi CursorColumn cterm=NONE ctermbg=grey ctermfg=white guibg=grey guifg=white
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>

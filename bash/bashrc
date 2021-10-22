@@ -24,7 +24,7 @@ nusscpsunfire() {
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Fuzzy Finder (fzf) settings
-alias fzfp="fzf --preview 'bat {-1} --color=always'"
+alias fp="fzf --preview 'bat --color=always --style=numbers {}' --bind ctrl-u:preview-page-up,ctrl-d:preview-page-down"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Fuzzy Git Diff (allows git diff to be displayed in fzf preview window with
 # syntax highlighting

@@ -2,6 +2,6 @@
 
 ```bash
 # Create symbolic links
-ln -s ./coc-settings.json ~/.config/nvim/coc-settings.json
-ln -s init.vim ~/.config/nvim/init.vim
+ln -s $PWD/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -s $PWD/init.vim ~/.config/nvim/init.vim
 ```

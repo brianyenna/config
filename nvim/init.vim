@@ -34,6 +34,7 @@ set encoding=UTF-8
 " For NERDTree
 " ------------
 nnoremap <Leader>t :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1 " Show hidden files
 
 " -------------
 " For Telescope
@@ -72,6 +73,11 @@ omap ic <Plug>(coc-classobj-i)
 "  For dashboard-nvim
 " -------------------
 let g:dashboard_default_executive ='telescope'
+
+" -----------------
+" General Shortcuts
+" -----------------
+nmap <leader>v :tabedit ~/.config/nvim/init.vim<CR>
 
 " -----------------------
 " Potential Color Schemes

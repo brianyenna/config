@@ -14,7 +14,8 @@ Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Bunch of color schemes
-Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+" Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion TODO: REMOVE
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Auto Completion
 "Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'nvim-lua/plenary.nvim' " For fuzzyfinding

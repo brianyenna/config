@@ -26,11 +26,23 @@ Plug 'chentau/marks.nvim' " Vim marks
 
 call plug#end()
 
+" ******************************** General Settings ******************************** 
 " Set colorscheme
 set encoding=UTF-8
 :colorscheme gruvbox
 
-" Mappings
+" Turn on Syntax Highlighting
+syntax on
+
+" Display different types of white spaces.
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
+
+" Add a ruler at 80 and 120th column
+set colorcolumn=80,120
+highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
+
+" ******************************** Mappings Settings ******************************** 
 " ------------
 " For NERDTree
 " ------------
@@ -83,9 +95,14 @@ nmap <leader>a :TagbarToggle/f<CR>
 " -----------------
 " General Shortcuts
 " -----------------
+" Access `init.vim` in new tab
 nmap <leader>v :tabedit ~/.config/nvim/init.vim<CR>
+" Highlight current cursor position
+:hi CursorLine   cterm=NONE ctermbg=grey ctermfg=white guibg=grey guifg=white
+:hi CursorColumn cterm=NONE ctermbg=grey ctermfg=white guibg=grey guifg=white
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
-" Settings (via Lua)
+" ******************************** Plugin Settings (via Lua) ************************
 autocmd VimEnter * call s:setup_lualine()
 function! s:setup_lualine() abort
 lua<<EOF

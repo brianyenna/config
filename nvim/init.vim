@@ -15,13 +15,14 @@ Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Bunch of color schemes
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
-"Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'nvim-lua/plenary.nvim' " For fuzzyfinding
 Plug 'nvim-telescope/telescope.nvim' " For fuzzyfinding
 Plug 'nvim-telescope/telescope-fzy-native.nvim' " For speeding up fuzzyfinding
 Plug 'morhetz/gruvbox' " Gruvbox color scheme
 Plug 'glepnir/dashboard-nvim' " Dashboard/Landing Page for nvim
+Plug 'chentau/marks.nvim' " Vim marks
 
 call plug#end()
 
@@ -69,15 +70,41 @@ omap if <Plug>(coc-funcobj-i)
 xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 
-" -------------------
-"  For dashboard-nvim
-" -------------------
+" ------------------
+" For dashboard-nvim
+" ------------------
 let g:dashboard_default_executive ='telescope'
+
+" ----------
+" For tagbar
+" ----------
+nmap <leader>a :TagbarToggle/f<CR>
 
 " -----------------
 " General Shortcuts
 " -----------------
 nmap <leader>v :tabedit ~/.config/nvim/init.vim<CR>
+
+" Settings (via Lua)
+autocmd VimEnter * call s:setup_lualine()
+function! s:setup_lualine() abort
+lua<<EOF
+
+require'marks'.setup {
+  -- whether to map keybinds or not. default true
+  default_mappings = true,
+  -- which builtin marks to show. default {}
+  builtin_marks = { ".", "<", ">", "^" },
+  -- whether movements cycle back to the beginning/end of buffer. default true
+  cyclic = true,
+  -- how often (in ms) to redraw signs/recompute mark positions. 
+  -- higher values will have better performance but may cause visual lag, 
+  -- while lower values may cause performance penalties. default 150.
+  refresh_interval = 250,
+}
+
+EOF
+endfunction
 
 " -----------------------
 " Potential Color Schemes

@@ -2,6 +2,7 @@
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
+:set expandtab
 :set smarttab
 :set softtabstop=4
 :set mouse=a
@@ -23,6 +24,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim' " For speeding up fuzzyfinding
 Plug 'morhetz/gruvbox' " Gruvbox color scheme
 Plug 'glepnir/dashboard-nvim' " Dashboard/Landing Page for nvim
 Plug 'chentau/marks.nvim' " Vim marks
+Plug 'luochen1990/rainbow' " Colorize brackets
+Plug 'jiangmiao/auto-pairs' " Auto-pairing of brackets
+Plug 'vimwiki/vimwiki' " Vimwiki
 
 call plug#end()
 
@@ -42,7 +46,7 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=DarkGrey guibg=lightgrey
 
-" ******************************** Mappings Settings ******************************** 
+" ******************************** Plugin Settings *********************************
 " ------------
 " For NERDTree
 " ------------
@@ -91,6 +95,17 @@ let g:dashboard_default_executive ='telescope'
 " For tagbar
 " ----------
 nmap <leader>a :TagbarToggle/f<CR>
+
+" -----------
+" For rainbow
+" -----------
+let g:rainbow_active=1
+
+" -------
+" VimWiki
+" -------
+set nocompatible
+filetype plugin on
 
 " -----------------
 " General Shortcuts

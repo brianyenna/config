@@ -2,7 +2,18 @@
 
 ## Installation Instructions
 
-TODO: Add more here
+1. Install `tpm` (`tmux` Plugin Manager)
+
+2. Install `Nord` theme file
+
+As noted [here](https://www.nordtheme.com/docs/ports/tmux/installation), `tmux`
+must be used with a Nord terminal emulator theme in order to work properly.
+
+In the case of iTerm2, a customised Nord theme file is included in this repo.
+
+3. Install plugins
+
+Open `tmux` and enter `Prefix-I` (note: the capital I) to install the plugins
 
 ## Some Interesting Commands
 
@@ -26,6 +37,9 @@ tmux choose-buffer
 # Save the contents of the pane
 tmux capture-pane
 tmux pipe-pane
+
+# Target a particular session/window/pane and send commands
+tmux send-keys -t <SESSION>:<WINDOW>.<PANE> 'cd ~/somewhere' C-m
 ```
 
 ## Modes
@@ -33,9 +47,9 @@ tmux pipe-pane
 Use `Prefix :` to enter command mode
 Use `Prefix [` to enter copy mode (Use `Prefix ]` to paste buffer's contents)
 
-TODO: Deal with copying --> vim keybindings? --> a solution that works for both MacOSX and Linux?
 
 ## Good Resources
 
 1. https://thoughtbot.com/upcase/tmux
+2. tmux2: Productive Mouse-Free Development (book) - the chapter summaries are particularly useful
 

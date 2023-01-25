@@ -15,7 +15,7 @@ Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Bunch of color schemes
-Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+Plug 'https://github.com/neoclide/coc.nvim' " Auto Completion
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'nvim-lua/plenary.nvim' " For fuzzyfinding
@@ -23,7 +23,7 @@ Plug 'nvim-telescope/telescope.nvim' " For fuzzyfinding
 Plug 'nvim-telescope/telescope-fzy-native.nvim' " For speeding up fuzzyfinding
 Plug 'morhetz/gruvbox' " Gruvbox color scheme
 Plug 'glepnir/dashboard-nvim' " Dashboard/Landing Page for nvim
-Plug 'chentau/marks.nvim' " Vim marks
+Plug 'chentoast/marks.nvim' " Vim marks
 Plug 'luochen1990/rainbow' " Colorize brackets
 Plug 'jiangmiao/auto-pairs' " Auto-pairing of brackets
 Plug 'vimwiki/vimwiki' " Vimwiki
@@ -106,6 +106,8 @@ let g:rainbow_active=1
 " -------
 set nocompatible
 filetype plugin on
+nnoremap <leader>m :VimwikiToggleListItem<CR>
+let g:vimwiki_folding='list'
 
 " -----------------
 " General Shortcuts

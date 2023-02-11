@@ -1,4 +1,0 @@
-sgb-byl4
-sgb-byl55;      cer-tdl2,    sjo-networkl4
-    hello_world another_world
-

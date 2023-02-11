@@ -14,6 +14,8 @@ tmux new-window -t ${CURRENT_TMUX_SESSION_NAME} -n ${MULTI_SSH_TMUX_WINDOW_NAME}
 # Iterate through the host_names in the TEMP_FILE
 OLD_IFS=${IFS}
 IFS=$'\n\t,; '
+IS_FIRST_HOST=1 # Use the first pane (created when window was first created)
+echo "SSH-ing into the following hosts:"
 for host_name in $(cat ${TEMP_FILE})
 do
     # Strip the hostname of any whitespace characters
@@ -21,9 +23,18 @@ do
 
     # Check that the cleaned host name string is non-zero
     if [ -n "${cleaned_host_name}" ]; then
-        echo "${cleaned_host_name}"
-        # Create a new pane
-        tmux split-window -v -t ${CURRENT_TMUX_SESSION_NAME}:${MULTI_SSH_TMUX_WINDOW_NAME}
+        echo "- ${cleaned_host_name}"
+       
+        if [ ${IS_FIRST_HOST} -eq 1 ]; then
+            # Do not create a new pane for the first host.
+            # Just re-use the first pane (created when window was first created)
+            IS_FIRST_HOST=0
+        else
+            # Create a new pane
+            tmux split-window -v -t ${CURRENT_TMUX_SESSION_NAME}:${MULTI_SSH_TMUX_WINDOW_NAME}
+        fi
+
+        # Send command to tmux pane
         tmux send-keys "echo ${cleaned_host_name}" Enter
     fi
 done

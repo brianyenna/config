@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO: Figure out a way to deal with the directory configuration --> a config file?
-# TODO: Add instructions on how to set up everything --> provide a set-up script?
-# TODO: Provide a bootstrap script that does the following:
-#       - create the top-level script (together with short desc)
-#       - create the script-specific folder
-# TODO: Create a helper script that will chmod u+x all the newly-created scripts. Do so recursively?
-# TODO: Document the file naming conventions and the separation of the various scripts into their directories
-# TODO: Be able to disable certain scripts --> put this in the config file?
 
 CRAQ_DIR="/Users/brianyen/Desktop/config/craq/top_level_scripts"
 

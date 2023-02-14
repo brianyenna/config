@@ -49,4 +49,3 @@ IFS=${OLD_IFS}
 # Delete the temporary file
 rm ${TEMP_FILE}
 
-# TODO: Provide a way to configure env variables? --> programmatically do this and provide a rich TUI
